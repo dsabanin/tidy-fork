@@ -11,6 +11,7 @@ class Tidybuf
   # Mimic TidyBuffer.
   #
   TidyBuffer = struct [
+    "int* allocator",
     "byte* bp",
     "uint size",
     "uint allocated",
@@ -30,7 +31,7 @@ class Tidybuf
   # Convert to array.
   #
   def to_a
-    to_s.split("\r\n")
+    to_s.split($/)
   end
 
   # Convert to string.
