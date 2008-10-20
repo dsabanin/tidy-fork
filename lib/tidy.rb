@@ -47,6 +47,14 @@ module Tidy
     @path = path
   end
   
+  def fresh_tidy_version=(bool)
+    @fresh_tidy_version = bool
+  end
+  
+  def fresh_tidy_version
+    !!@fresh_tidy_version
+  end
+  
   # With no block, open is a synonym for Tidy.new.
   # If a block is present, it is passed aTidy as a parameter.
   # aTidyObj.release is ensured at end of the block.

@@ -8,18 +8,8 @@ class Tidybuf
   #
   attr_reader(:struct)
 
-  # Mimic TidyBuffer.
-  #
-  TidyBuffer = struct [
-    "int* allocator",
-    "byte* bp",
-    "uint size",
-    "uint allocated",
-    "uint next"
-  ]
-
   def initialize
-    @struct = TidyBuffer.malloc
+    @struct = self.class.struct(construct_tidy_buffer).malloc
   end
     
   # Free current contents and zero out.
@@ -40,4 +30,18 @@ class Tidybuf
     @struct.bp ? @struct.bp.to_s(@struct.size) : ''
   end
 
+protected
+
+  def construct_tidy_buffer
+    struct_rows = [ "byte* bp",
+      "uint size",
+      "uint allocated",
+      "uint next" 
+    ]
+    if Tidy.fresh_tidy_version
+      struct_rows.unshift "int* allocator"
+    end
+    struct_rows
+  end
+  
 end

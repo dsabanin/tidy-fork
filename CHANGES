@@ -1,4 +1,7 @@
 V 1.1.3 2008/10/20
+- Introduced Tidy.fresh_tidy_version = bool flag to enable/disable support
+  for fresh Tidylib versions. Disabled by default, turn it on if you
+  experience seg faults.
 - Segmentation fault when loading the TidyBuffer from the dynamic library.
   Fix for 'tidybuf.rb:40: [BUG] Segmentation fault' error.
   [Patch by Ben Walding (bwalding)]
