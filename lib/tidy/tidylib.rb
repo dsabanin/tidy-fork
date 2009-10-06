@@ -16,6 +16,7 @@ module Tidylib
     end
     extern "void *tidyCreate()"
     extern "void tidyBufFree(void*)"
+    extern "void tidyBufInit(void*)"
     extern "int tidyCleanAndRepair(void*)"
     extern "int tidyLoadConfig(void*, char*)"
     extern "int tidyOptGetIdForName(char*)"
@@ -29,6 +30,11 @@ module Tidylib
     extern "int tidySetErrorBuffer(void*, void*)"
   end
   
+  # tidyBufInit
+  def buf_init(buf)
+    tidyBufInit(buf)
+  end
+
   # tidyBufFree
   #
   def buf_free(buf)

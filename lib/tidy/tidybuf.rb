@@ -10,6 +10,7 @@ class Tidybuf
 
   def initialize
     @struct = self.class.struct(construct_tidy_buffer).malloc
+    Tidylib.buf_init(@struct)
   end
     
   # Free current contents and zero out.
@@ -33,7 +34,9 @@ class Tidybuf
 protected
 
   def construct_tidy_buffer
-    struct_rows = [ "byte* bp",
+    struct_rows = [
+      "TidyAllocator* allocator",
+      "byte* bp",
       "uint size",
       "uint allocated",
       "uint next" 
