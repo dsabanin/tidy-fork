@@ -13,17 +13,16 @@ MANIFEST
 README.txt.en
 test
 test/usage.rb
-tidy-fork-1.1.3.gem
 tidy-fork.gemspec
 VERSION
 )
 
 spec = Gem::Specification.new do |s|
-  s.name = 'tidy-fork'
+  s.name = 'tidy'
   s.version = "1.1.3"
   s.author = 'Kevin Howe'
   s.email = 'kh@newclear.ca'
-  s.homepage = 'github.com/railsmonk/tidy-fork'
+  s.homepage = 'http://github.com/railsmonk/tidy-fork'
   s.platform = Gem::Platform::RUBY
   s.summary = 'Forked Ruby interface to HTML Tidy Library Project with important bugfixes'
   s.files = MANIFEST
