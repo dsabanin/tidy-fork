@@ -5,8 +5,8 @@ V 1.1.3 2008/10/20
 - Segmentation fault when loading the TidyBuffer from the dynamic library.
   Fix for 'tidybuf.rb:40: [BUG] Segmentation fault' error.
   [Patch by Ben Walding (bwalding)]
-  
-- The line separator is hard-encoded instead of using the $/ magic variable, 
+
+- The line separator is hard-encoded instead of using the $/ magic variable,
   so it breaks on unix platforms.
   [Patch by Damien Merenne <dam@cosinux.org>]
 
@@ -23,8 +23,8 @@ V 1.1.1 2005/03/07
   only true if the length of the data is evenly divisable by 256, but
   if Tidy output is e.g. 512 bytes long the buffer is not null-terminated
   and the code reads out of bounds. Result: garbage chars in output.
-  
-  Fix: Code changed to read only TidyBuffer.size bytes from the buffer. 
+
+  Fix: Code changed to read only TidyBuffer.size bytes from the buffer.
   In TidyBuffer#to_s: @struct.bp.to_s => @struct.bp.to_s(@struct.size)
   '.'*345 = 512 char output (for testing)
 
@@ -76,7 +76,7 @@ V.B2
     this avoids hard coding the library name
     require 'tidy'
     Tidy.load('path/to/tidylib.so')
-    
+
 V.B1
 
   First release

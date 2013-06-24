@@ -3,7 +3,7 @@
 class Tidybuf
 
   extend DL::Importable
-  
+
   # Access TidyBuffer instance.
   #
   attr_reader(:struct)
@@ -12,7 +12,7 @@ class Tidybuf
     @struct = self.class.struct(construct_tidy_buffer).malloc
     Tidylib.buf_init(@struct)
   end
-    
+
   # Free current contents and zero out.
   #
   def free
@@ -39,12 +39,12 @@ protected
       "byte* bp",
       "uint size",
       "uint allocated",
-      "uint next" 
+      "uint next"
     ]
     if Tidy.fresh_tidy_version
       struct_rows.unshift "int* allocator"
     end
     struct_rows
   end
-  
+
 end

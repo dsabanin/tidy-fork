@@ -35,26 +35,26 @@ module Tidy
   def new(options=nil)
     Tidyobj.new(options)
   end
-  
+
   # Path to Tidylib.
   #
   def path() @path end
-  
+
   # Set the path to Tidylib (automatically loads the library).
   #
   def path=(path)
     Tidylib.load(path)
     @path = path
   end
-  
+
   def fresh_tidy_version=(bool)
     @fresh_tidy_version = bool
   end
-  
+
   def fresh_tidy_version
     !!@fresh_tidy_version
   end
-  
+
   # With no block, open is a synonym for Tidy.new.
   # If a block is present, it is passed aTidy as a parameter.
   # aTidyObj.release is ensured at end of the block.
@@ -72,7 +72,7 @@ module Tidy
       tidy
     end
   end
-  
+
   # Convert to boolean.
   # 0, false and nil return false, anything else true.
   #
